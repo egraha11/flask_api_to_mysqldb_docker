@@ -1,0 +1,17 @@
+
+services:
+  api:
+    image: egraha11/flaskapi:v1
+    container_name: api
+    networks:
+      - my-bridge-network
+
+  db:
+    image: egraha11/mysqldb:v1
+    networks:
+      - my-bridge-network
+    container_name: SQL_Container
+
+networks:
+  my-bridge-network:
+    driver: bridge
